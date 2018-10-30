@@ -1,0 +1,31 @@
+#include <MySQL_Connection.h> /* Biblioteca de Connect do Banco de Dados */
+#include <MySQL_Cursor.h> /* Biblioteca do Banco de Dados */
+#include <SPI.h> 
+#include <wifi.h>  /* Biblioteca do WIFI */
+
+#define SensorPeso A0
+#define Valvula A1
+
+/* DADOS PARA ACESSA O BANCO*/
+IPAddress server_addr(xxx,xxx,xx,x);
+char user[] = "USUARIOBANCO";
+char senha[] = "SENHABANCO";
+
+/* DADOS PARA ACESSAR O WIFI */
+char login[] = "LOGINWIFI"; 
+char senha[] = "SENHAWIFI"; 
+int status = WL_IDLE_STATUS; /* PEGA O STATUS DO WIFI */
+
+satus = WIFI.begin(login, senha);
+
+/* Verificar a coneccao */
+if( status != WL_CONNECTED){
+  Serial.println("Não foi possivel connect no wifi");  
+} else {
+  Serial.println("Connect ao computador");
+}
+
+/* COMANDOS BANCO */
+char INSERIR_PESO[] = "INSERT INTO registroagua (peso) VALUES ()";
+char INSERIR_TEMPO[] = ""; /* DEFINIR NO PARA QUE O BANCO PREENCHA ESSE ESPAÇO */
+char BANCODEDADOS[] = "USE banco_arduino"; 
