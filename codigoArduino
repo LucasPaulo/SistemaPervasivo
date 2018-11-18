@@ -18,16 +18,15 @@ void loop() {
   Serial.println(estado);
     
   if(estado == 1){
-    delay(2000);
+    digitalWrite(pino_led_ved, HIGH);
+    delay(5000); //Bomba funciona por 5 segundos
+    digitalWrite(pino_led_ved, LOW);
+    delay(1000); 
+  }else{
+    delay(1000); // Bomba desligada
     digitalWrite(pino_led_ver, HIGH); 
     delay(1000);
     digitalWrite(pino_led_ver, LOW);
-    delay(1000);
-  }else{
-    digitalWrite(pino_led_ved, HIGH);
-    delay(1000);
-    digitalWrite(pino_led_ved, LOW);
-    delay(1000);
+    delay(900000); //15 minutos pra consulta de novo oo nivel
   }
-  delay(1000); 
 }
