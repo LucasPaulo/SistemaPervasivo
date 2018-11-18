@@ -1,0 +1,7 @@
+create database arduinojava;
+use arduinojava;
+create table status(idstatu int auto_increment primary key,
+statu text not null,
+datatemp timestamp default current_timestamp
+);
+select * from status;
