@@ -1,4 +1,13 @@
 OBS: Abrir um novo projeto, sem classe principal.
-Cada pasta que esta dentro de JavaArduino = pacote.
+Criar os pacote.
+connection -> Classe ConnectionFactory
+model.bean -> Classe Status
+model.dao -> Classe StatusDAO
+util -> Classe ArduinoSerial
+view -> JFrame ViewStatus
+
+== Adicionar na biblioteca ==
+"Driver JDBC do MySQQL -mysql-connector-java-5.1.23-bin.jar"
+RXTXcomm.jar (Está na biblioteca que deve baixar RXTXcomm.jar: http://rxtx.qbang.org/wiki/index.php/Download)
 
 Configurar o RXTX
