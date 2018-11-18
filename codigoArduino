@@ -1,31 +1,33 @@
-#include <MySQL_Connection.h> /* Biblioteca de Connect do Banco de Dados */
-#include <MySQL_Cursor.h> /* Biblioteca do Banco de Dados */
-#include <SPI.h> 
-#include <wifi.h>  /* Biblioteca do WIFI */
+int Status = 3; //Pino que recebe o valor do sensor
+int pino_led_ver = 7; //Pino do LED vermelho
+int pino_led_ved = 6; //Pino do LED Verde
+int estado = 0; //Variavel que recebe o Status(Ligado/Desligado) da 'bomba'
 
-#define SensorPeso A0
-#define Valvula A1
+char resposta[] = "Ligou";
 
-/* DADOS PARA ACESSA O BANCO*/
-IPAddress server_addr(xxx,xxx,xx,x);
-char user[] = "USUARIOBANCO";
-char senha[] = "SENHABANCO";
-
-/* DADOS PARA ACESSAR O WIFI */
-char login[] = "LOGINWIFI"; 
-char senha[] = "SENHAWIFI"; 
-int status = WL_IDLE_STATUS; /* PEGA O STATUS DO WIFI */
-
-satus = WIFI.begin(login, senha);
-
-/* Verificar a coneccao */
-if( status != WL_CONNECTED){
-  Serial.println("Não foi possivel connect no wifi");  
-} else {
-  Serial.println("Connect ao computador");
+void setup() {
+  Serial.begin(9600);
+  // put your main code here, to run repeatedly:
+  pinMode(7, OUTPUT); // Led vermelho.
+  pinMode(6, OUTPUT); // Led verde.
+  pinMode(3, INPUT); // Porta de entrada do sensor.
 }
 
-/* COMANDOS BANCO */
-char INSERIR_PESO[] = "INSERT INTO registroagua (peso) VALUES ()";
-char INSERIR_TEMPO[] = ""; /* DEFINIR NO PARA QUE O BANCO PREENCHA ESSE ESPAÇO */
-char BANCODEDADOS[] = "USE banco_arduino"; 
+void loop() {
+  estado = digitalRead(Status); // 1 VAZIO e 0 CHEIO
+  Serial.println(estado);
+    
+  if(estado == 1){
+    delay(2000);
+    digitalWrite(pino_led_ver, HIGH); 
+    delay(1000);
+    digitalWrite(pino_led_ver, LOW);
+    delay(1000);
+  }else{
+    digitalWrite(pino_led_ved, HIGH);
+    delay(1000);
+    digitalWrite(pino_led_ved, LOW);
+    delay(1000);
+  }
+  delay(1000); 
+}
