@@ -1,0 +1,6 @@
+Sobre o funcionamento do sensor de nivel de agua: https://www.arduinoecia.com.br/2014/07/arduino-sensor-de-nivel-de-liquidos.html
+Canal que ajuda na configuração da comunicação do java com arduino: https://www.youtube.com/watch?v=ijVyxgTIg_I  https://www.youtube.com/watch?v=dbivOxYgRks
+Explicando sobre a comunicação do java e arduino: http://playground.arduino.cc/interfacing/java
+Biblioteca que comunica com o java e arduino: http://rxtx.qbang.org/wiki/index.php/Download#Known_RXTX_forks
+Para erro quando terminar de configurar tudo: https://forum.arduino.cc/index.php?topic=117961.0
+Para a classe ArduinoSerial: https://gist.github.com/samuelsonbrito/de1ca3ebe8172d2bb6035e8f0e613369
